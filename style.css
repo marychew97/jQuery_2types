@@ -41,6 +41,18 @@ h2{
   height:170px;
 }
 
+#portfolio li img:hover{
+  cursor:pointer;
+}
+
+#overlay:hover{
+  cursor:pointer;
+}
+
+#frame img:hover{
+  cursor:pointer;
+}
+
 #frame{
   position:fixed;
   left:50%;
@@ -49,6 +61,38 @@ h2{
   width:700px;
   height:500px;
   margin-left: -350px;
+  padding-top:20px;
+  padding-bottom:20px;
+  margin-top:15px;
+}
+
+#main{
+  width:660px;
+  margin-left:20px;
+}
+
+#frame-table{
+  position:absolute;
+  width:660px;
+  margin-left:20px;
+}
+
+#right{
+  float:right;
+}
+
+#right, #left{
+  position:relative;
+  top:200px;
+  opacity:0.75;
+}
+
+#left img{
+  margin-left:-3px;
+}
+
+#right img{
+  margin-right:-3px;
 }
 
 #overlay{
