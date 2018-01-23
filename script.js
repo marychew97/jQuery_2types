@@ -2,14 +2,26 @@ $(document).ready(function(){
 
   var current_li;
 
-  $("#portfolio img").click(function(){
-    var src = $(this).attr("src");
-
-    //get the parent of the images, which is the current image
-    current_li = $(this).parent();
-
+  //use ajax
+  function setImg(src,id){
     //"src" should be equal with the src variable
     $("#main").attr("src",src);
+
+    //folder path
+    var path = "text/"+id;
+    //ask server to provide contents and are stored in variable path
+    $.get(path,function(data){
+      console.log(data);
+      $("#description p").html(data);
+    });
+  }
+
+  $("#portfolio img").click(function(){
+    var src = $(this).attr("src");
+    var id = $(this).attr("id");
+    //get the parent of the images, which is the current image
+    current_li = $(this).parent();
+    setImg(src,id);
     $("#frame").fadeIn();
     $("#overlay").fadeIn();
   });
@@ -33,7 +45,9 @@ $(document).ready(function(){
 
     //get the children of next image, which is img and fetch the src using attribute
     var next_src = next_li.children("img").attr("src");
+    var id = next_li.children("img").attr("id");
     $("#main").attr("src",next_src);
+    setImg(next_src,id);
     current_li = next_li;
   });
 
@@ -50,7 +64,9 @@ $(document).ready(function(){
 
     //get the children of previous image, which is img and fetch the src using attribute
     var prev_src = prev_li.children("img").attr("src");
-    $("#main").attr("src",prev_src);
+    var id = prev_li.children("img").attr("id");
+    //$("#main").attr("src",prev_src);
+    setImg(prev_src,id);
     current_li = prev_li;
   });
 
