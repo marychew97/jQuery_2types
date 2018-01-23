@@ -2,7 +2,12 @@
 
 IDE: Atom
 
-1. Insert text and rewrite text within the textbox.
-2. Design a chatbot with functions including some AI(Artificial Intelligence) functions using jQuery.
-3. Design portfolio with frames, overlays and arrows using jQuery 
-   3.1 Extract text from text files using Ajax
+# Textbox
+Insert text and rewrite text within the textbox.
+
+# Chatbot
+Design a chatbot with functions including some AI(Artificial Intelligence) functions using jQuery.
+
+# Image Portfolio
+1. Design portfolio with frames, overlays and arrows using jQuery <br>
+2. Extract text from text files using Ajax
